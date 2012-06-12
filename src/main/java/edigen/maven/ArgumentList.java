@@ -56,6 +56,19 @@ public class ArgumentList {
     }
     
     /**
+     * Adds the argument representing the template file to the list of
+     * arguments.
+     * @param argument the argument name (e.g. "-at")
+     * @param template the template file name
+     */
+    public void addTemplate(String argument, File template) {
+        if (template != null) {
+            add(argument);
+            add(template.getPath());
+        }
+    }
+    
+    /**
      * Adds the argument representing the output directory to the list of
      * arguments.
      * @param argument the argument name (e.g. "-ao")
@@ -73,6 +86,16 @@ public class ArgumentList {
         
         add(argument);
         add(directory.getPath());
+    }
+    
+    /**
+     * Adds the flag to the argument list if the flag value is true.
+     * @param argument the argument name (e.g. "-d")
+     * @param flag the flag value
+     */
+    public void addFlag(String argument, boolean flag) {
+        if (flag)
+            add(argument);
     }
     
     /**

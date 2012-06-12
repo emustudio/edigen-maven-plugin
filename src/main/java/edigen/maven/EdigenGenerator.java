@@ -74,7 +74,21 @@ public class EdigenGenerator extends AbstractMojo {
      * @parameter
      */
     private File disassemblerOutputDir;
-
+    
+    /**
+     * Disassembler template file.
+     * 
+     * @parameter
+     */
+    private File disassemblerTemplate;
+    
+    /**
+     * Debug mode (display tree transformations).
+     * 
+     * @parameter
+     */
+    private boolean debug;
+    
     /**
      * Instruction decoder output directory.
      * 
@@ -84,6 +98,13 @@ public class EdigenGenerator extends AbstractMojo {
      * @parameter
      */    
     private File decoderOutputDir;
+    
+    /**
+     * Instruction decoder template file.
+     * 
+     * @parameter
+     */
+    private File decoderTemplate;
     
     /**
      * A list of command-line arguments passed to Edigen.
@@ -124,7 +145,12 @@ public class EdigenGenerator extends AbstractMojo {
         arguments.add(disassemblerName);
         
         arguments.addOutputDirectory("-ao", disassemblerOutputDir, disassemblerName);
+        arguments.addTemplate("-at", disassemblerTemplate);
+        
+        arguments.addFlag("-d", debug);
+        
         arguments.addOutputDirectory("-do", decoderOutputDir, decoderName);
+        arguments.addTemplate("-dt", decoderTemplate);
     }
     
 }
