@@ -115,13 +115,18 @@ public class EdigenGenerator extends AbstractMojo {
      * Executes the goal "generate" of this plugin.
      * @throws MojoExecutionException when the goal execution is unsuccessful
      */
+    @Override
     public void execute() throws MojoExecutionException {
         validate();
         
         arguments = new ArgumentList(project);
         addArguments();
         
-        Edigen.main(arguments.get());
+        try {
+            new Edigen().run(arguments.get());
+        } catch (Exception ex) {
+            throw new MojoExecutionException(ex.getMessage(), ex);
+        }
     }
     
     /**
