@@ -1,5 +1,6 @@
 Edigen Maven Plugin
 ===================
+[![Build Status](https://travis-ci.org/vbmacher/edigen-maven-plugin.png)](https://travis-ci.org/vbmacher/edigen-maven-plugin)
 
 This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of an [emuStudio](http://github.com/vbmacher/emuStudio) CPU plugin from a specification using [Edigen](http://github.com/sulir/edigen). Running Edigen manually via the command line is no longer necessary.
 
