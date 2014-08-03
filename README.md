@@ -39,7 +39,7 @@ Of course, replace `decoder.package.ClassName` and `disassembler.package.ClassNa
 
 Then save your CPU specification file as `src/main/edigen/cpu.eds` and build the project.
 
-Rerefence
+Reference
 ---------
 
 This plugin offers one goal, `edigen:generate`, which participates in the `generate-sources` lifecycle phase.
