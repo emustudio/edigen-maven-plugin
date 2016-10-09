@@ -18,10 +18,11 @@
 package edigen.maven;
 
 import edigen.Edigen;
-import java.io.File;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.project.MavenProject;
+
+import java.io.File;
 
 /**
  * Edigen Maven plugin.
@@ -36,7 +37,7 @@ public class EdigenGenerator extends AbstractMojo {
      * An object representing the Maven project which uses this plugin in its
      * POM file.
      * 
-     * @parameter expression="${project}"
+     * @parameter property="project"
      * @required
      * @readonly
      */
