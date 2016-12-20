@@ -2,20 +2,38 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>edigen</groupId>
+    <groupId>com.github.sulir</groupId>
     <artifactId>edigen-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>Edigen Maven Plugin</name>
+    <description>A Maven Plugin for Emulator Disassembler Generator</description>
     <url>http://github.com/sulir/edigen-maven-plugin</url>
-    
-    <repositories>
-        <repository>
-            <id>emustudio-repository</id>
-            <name>emuStudio Repository</name>
-            <url>http://emustudio.sf.net/repository/</url>
-        </repository>
-    </repositories>
+
+    <licenses>
+        <license>
+            <name>GPL-2.0+</name>
+            <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>sulir</id>
+            <name>Matúš Sulír</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netbeans.hint.license>gpl20</netbeans.hint.license>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git://github.com/sulir/edigen-maven-plugin.git</connection>
+        <developerConnection>scm:git:ssh://github.com:sulir/edigen-maven-plugin.git</developerConnection>
+        <url>https://github.com/sulir/edigen-maven-plugin</url>
+    </scm>
     
     <dependencies>
         <dependency>
@@ -29,25 +47,77 @@
             <version>2.2.1</version>
         </dependency>
         <dependency>
-            <groupId>edigen</groupId>
+            <groupId>com.github.sulir</groupId>
             <artifactId>edigen</artifactId>
             <version>1.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>net.sf.emustudio</groupId>
-            <artifactId>emuLib</artifactId>
-            <version>9.0.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
-    
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>2.10</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -68,18 +138,15 @@
             </plugin>
         </plugins>
     </build>
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <netbeans.hint.license>gpl20</netbeans.hint.license>
-    </properties>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>emustudio-repository</id>
-            <name>emuStudio Repository</name>
-            <url>sftp://web.sourceforge.net:/home/project-web/emustudio/htdocs/repository</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
 </project>

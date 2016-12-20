@@ -15,12 +15,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package edigen.maven;
+package com.github.sulir.edigen.maven;
+
+import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.maven.project.MavenProject;
 
 /**
  * A command-line argument list for edigen.
