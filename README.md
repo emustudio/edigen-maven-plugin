@@ -1,22 +1,20 @@
-Edigen Maven Plugin
-===================
+# Edigen Maven Plugin
+
 [![Build Status](https://travis-ci.org/sulir/edigen-maven-plugin.png)](https://travis-ci.org/sulir/edigen-maven-plugin)
 
 This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of an [emuStudio](http://github.com/vbmacher/emuStudio) CPU plugin from a specification using [Edigen](http://github.com/sulir/edigen). Running Edigen manually via the command line is no longer necessary.
 
-Basic use
----------
+## Basic use
 
 Add the plugin to your `pom.xml`:
 
 ```xml
-...
 <build>
 	<plugins>
 		<plugin>
-			<groupId>edigen</groupId>
+			<groupId>com.github.sulir</groupId>
 			<artifactId>edigen-maven-plugin</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.1-SNAPSHOT</version>
 			<configuration>
 				<decoderName>decoder.package.ClassName</decoderName>
 				<disassemblerName>disassembler.package.ClassName</disassemblerName>
@@ -32,15 +30,13 @@ Add the plugin to your `pom.xml`:
 		...
 	</plugins>
 </build>
-...
 ```
 
-Of course, replace `decoder.package.ClassName` and `disassembler.package.ClassName` with the right values.
+Replace `decoder.package.ClassName` with the decoder class and `disassembler.package.ClassName` with the disassembler class to be generated for your emuStudio processor plugin.
 
 Then save your CPU specification file as `src/main/edigen/cpu.eds` and build the project.
 
-Reference
----------
+## Reference
 
 This plugin offers one goal, `edigen:generate`, which participates in the `generate-sources` lifecycle phase.
 
