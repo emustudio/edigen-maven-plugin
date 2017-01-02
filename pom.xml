@@ -4,7 +4,7 @@
     
     <groupId>com.github.sulir</groupId>
     <artifactId>edigen-maven-plugin</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>maven-plugin</packaging>
     <name>Edigen Maven Plugin</name>
     <description>A Maven Plugin for Emulator Disassembler Generator</description>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.github.sulir</groupId>
             <artifactId>edigen</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>1.1</version>
         </dependency>
     </dependencies>
 
