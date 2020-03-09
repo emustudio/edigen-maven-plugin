@@ -1,8 +1,6 @@
 # Edigen Maven Plugin
 
-[![Build Status](https://travis-ci.org/sulir/edigen-maven-plugin.png)](https://travis-ci.org/sulir/edigen-maven-plugin)
-
-This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of an [emuStudio](http://github.com/vbmacher/emuStudio) CPU plugin from a specification using [Edigen](http://github.com/sulir/edigen). Running Edigen manually via the command line is no longer necessary.
+This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of an [emuStudio](http://github.com/emustudio/emuStudio) CPU plugin from a specification using [Edigen](http://github.com/emustudio/edigen). Running Edigen manually via the command line is no longer necessary.
 
 ## Basic use
 
@@ -12,9 +10,9 @@ Add the plugin to your `pom.xml`:
 <build>
 	<plugins>
 		<plugin>
-			<groupId>com.github.sulir</groupId>
+			<groupId>net.emustudio</groupId>
 			<artifactId>edigen-maven-plugin</artifactId>
-			<version>1.1-SNAPSHOT</version>
+			<version>1.2-SNAPSHOT</version>
 			<configuration>
 				<decoderName>decoder.package.ClassName</decoderName>
 				<disassemblerName>disassembler.package.ClassName</disassemblerName>
