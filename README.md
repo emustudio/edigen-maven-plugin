@@ -1,8 +1,12 @@
 # Edigen Maven Plugin
 
-This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of an [emuStudio](http://github.com/emustudio/emuStudio) CPU plugin from a specification using [Edigen](http://github.com/emustudio/edigen). Running Edigen manually via the command line is no longer necessary.
+This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of
+[emuStudio](http://github.com/emustudio/emuStudio) CPU plugin from a specification using
+[Edigen](http://github.com/emustudio/edigen).
+ 
+Running Edigen manually via the command line is no longer necessary.
 
-## Basic use
+## Usage
 
 Add the plugin to your `pom.xml`:
 
@@ -12,7 +16,7 @@ Add the plugin to your `pom.xml`:
 		<plugin>
 			<groupId>net.emustudio</groupId>
 			<artifactId>edigen-maven-plugin</artifactId>
-			<version>1.2-SNAPSHOT</version>
+			<version>1.2</version>
 			<configuration>
 				<decoderName>decoder.package.ClassName</decoderName>
 				<disassemblerName>disassembler.package.ClassName</disassemblerName>
