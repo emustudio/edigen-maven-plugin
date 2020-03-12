@@ -1,4 +1,5 @@
 # Edigen Maven Plugin
+![Edigen Maven Plugin Build](https://github.com/emustudio/edigen-maven-plugin/workflows/Edigen%20Maven%20Plugin%20Build/badge.svg)
 
 This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of
 [emuStudio](http://github.com/emustudio/emuStudio) CPU plugin from a specification using
