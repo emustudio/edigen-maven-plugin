@@ -18,7 +18,7 @@ Add the plugin to your `pom.xml`:
 		<plugin>
 			<groupId>net.emustudio</groupId>
 			<artifactId>edigen-maven-plugin</artifactId>
-			<version>1.3</version>
+			<version>1.4</version>
 			<configuration>
 				<decoderName>decoder.package.ClassName</decoderName>
 				<disassemblerName>disassembler.package.ClassName</disassemblerName>
