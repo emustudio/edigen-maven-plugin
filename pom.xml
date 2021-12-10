@@ -4,7 +4,7 @@
     
     <groupId>net.emustudio</groupId>
     <artifactId>edigen-maven-plugin</artifactId>
-    <version>1.3</version>
+    <version>1.4</version>
     <packaging>maven-plugin</packaging>
     <name>Edigen Maven Plugin</name>
     <description>A Maven Plugin for Emulator Disassembler Generator</description>
@@ -45,12 +45,12 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>3.6.3</version>
+            <version>3.8.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.6.0</version>
+            <version>3.6.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>net.emustudio</groupId>
             <artifactId>edigen</artifactId>
-            <version>1.3</version>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 
