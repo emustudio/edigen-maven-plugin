@@ -1,5 +1,5 @@
 # Edigen Maven Plugin
-![Edigen Maven Plugin Build](https://github.com/emustudio/edigen-maven-plugin/workflows/Edigen%20Maven%20Plugin%20Build/badge.svg)
+[![Edigen Maven Plugin Build](https://github.com/emustudio/edigen-maven-plugin/actions/workflows/maven.yml/badge.svg)](https://github.com/emustudio/edigen-maven-plugin/actions/workflows/maven.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.emustudio/edigen-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.emustudio/edigen-maven-plugin)
 
 This is a Maven 3 plugin which automatically generates an instruction decoder and disassembler of
